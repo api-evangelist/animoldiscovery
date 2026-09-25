@@ -1,23 +1,60 @@
 aid: animoldiscovery
+
 name: Animoldiscovery
-description: 'Animoldiscovery is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Animoldiscovery is a data discovery platform that aggregates and curates information about emerging companies and technologies. It provides APIs for searching, filtering, and retrieving detailed company profiles, including financials, market trends, and contact information. The service aims to help investors, analysts, and business development professionals uncover hidden opportunities and stay informed about the evolving startup ecosystem.'
+
 url: https://raw.githubusercontent.com/api-evangelist/animoldiscovery/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-24'
+
 modified: '2026-09-24'
+
 tags:
 - Company
-apis: []
+- Data
+- Discovery
+- API
+- Startup
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/animoldiscovery-hosts.yml
+- type: Vendors
+  url: vendors/animoldiscovery-vendors.yml
+- type: DomainSecurity
+  url: security/animoldiscovery-domain-security.yml
 - type: Website
   url: https://equityzen.com/company/animoldiscovery
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The provider's website animoldiscovery.com returns a JavaScript-rendered shell preventing machine reading.
+  evidence:
+    - url: https://animoldiscovery.com
+      status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 3
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
